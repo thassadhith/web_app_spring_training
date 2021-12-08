@@ -6,12 +6,12 @@ services:
         ports:
             - 80:80
             - 8080:8080
-        deploy:
-            replicas: 3
         volumes:
             - /var/run/docker.sock:/var/run/docker.sock:ro
             - ./traefik.toml:/traefik.toml
     todolist:
+        deploy:
+            replicas: 3
         labels:
             - "traefik.http.routers.todolist.rule=PathPrefix(`/app`)"
             - "traefik.http.middlewares.todolist.stripPrefix.prefixes=/app"
