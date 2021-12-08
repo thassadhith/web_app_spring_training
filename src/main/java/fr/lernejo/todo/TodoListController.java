@@ -19,8 +19,9 @@ public class TodoListController {
 
     @GetMapping("api/todo")
     public ArrayList<Todo> getlist(){
-        listtodo.add(new Todo("salut tout le monde","Mehdi najmi"));
+        listtodo.add(new Todo("salut tout le monde","ds"));
         return listtodo;
     }
 }
+
 
