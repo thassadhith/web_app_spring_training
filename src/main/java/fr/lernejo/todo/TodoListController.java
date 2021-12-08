@@ -9,17 +9,17 @@ import java.util.ArrayList;
 
 @RestController
 public class TodoListController {
-    private final ArrayList<Todo> listtodo = new ArrayList<Todo>();
+    ArrayList<Todo> listtodo = new ArrayList<Todo>();
 
 
     @PostMapping("api/todo")
     public void add(Todo mynewtodo) {
-
+        listtodo.add(mynewtodo);
     }
 
     @GetMapping("api/todo")
     public ArrayList<Todo> getlist(){
-        listtodo.add(new Todo("salut tout le monde","ss"));
         return listtodo;
     }
 }
+
